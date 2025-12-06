@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import '../portfolio.css';
+import { useNavigate } from 'react-router-dom';
 
 const PortfolioOverview = () => {
   const [timeFrame, setTimeFrame] = useState('24HR');
   const [activeNav, setActiveNav] = useState('portfolio');
+  const navigate = useNavigate();
+
+  const handleAddFunds = () => {
+      navigate('/deposit-funds')
+  }
+
+  const handleSelectAsset = () => {
+    navigate('/select-asset')
+  }
 
   const topAssets = [
     {
@@ -90,10 +100,13 @@ const PortfolioOverview = () => {
             </div>
           </div>
           <div className="flex gap-3 md:gap-4">
-            <button className="flex-1 text-center py-3 bg-gray-100 hover:bg-gray-200 text-primary font-bold rounded-lg transition-colors cursor-pointer">
+            <button className="flex-1 text-center py-3 bg-gray-100 hover:bg-gray-200 text-primary font-bold rounded-lg transition-colors cursor-pointer"
+             onClick={handleSelectAsset}>
               Buy Assets
             </button>
-            <button className="flex-1 text-center py-3 bg-lemon-yellow hover:opacity-90 text-dark-gray-near-black font-bold rounded-lg transition-colors cursor-pointer">
+            <button 
+              className="flex-1 text-center py-3 bg-lemon-yellow hover:opacity-90 text-dark-gray-near-black font-bold rounded-lg transition-colors cursor-pointer"
+              onClick={handleAddFunds}>
               Add Funds
             </button>
           </div>

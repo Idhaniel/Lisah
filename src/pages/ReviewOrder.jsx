@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ReviewOrder = () => {
   const [acknowledged, setAcknowledged] = useState(false);
-
+    const navigate = useNavigate();
   const orderDetails = {
     assetName: 'TSLA',
     quantity: '10',
@@ -19,10 +20,12 @@ const ReviewOrder = () => {
 
   const handleBack = () => {
     console.log('Back button clicked');
+    navigate('/order-and-lock')
   };
 
   const handleSubmit = () => {
     console.log('Order confirmed');
+    navigate('/order-lock-success')
   };
 
   const handleCheckboxChange = () => {

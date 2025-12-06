@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const DepositFunds = () => {
   const [depositAmount, setDepositAmount] = useState('');
   const [selectedMethod, setSelectedMethod] = useState('bank-transfer');
   const [showHistory, setShowHistory] = useState(false);
+  const navigate = useNavigate();
 
   const depositMethods = [
     { id: 'bank-transfer', label: 'Bank Transfer' },
@@ -13,7 +15,7 @@ const DepositFunds = () => {
 
   const handleBack = () => {
     // Handle back navigation
-    console.log('Back button clicked');
+    navigate('/portfolio');
   };
 
   const handleSubmit = (e) => {
@@ -22,8 +24,7 @@ const DepositFunds = () => {
       alert('Please enter a valid deposit amount');
       return;
     }
-    console.log('Depositing:', { amount: depositAmount, method: selectedMethod });
-    // Handle deposit logic
+    navigate('/portfolio')
   };
 
   const handleAmountChange = (e) => {

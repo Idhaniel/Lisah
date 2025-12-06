@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OrderAndLockSuccessPage = () => {
+    const navigate = useNavigate();
   const orderDetails = {
     assetName: 'S&P 500 Index Fund',
     quantity: '0.5 Shares',
@@ -10,10 +12,13 @@ const OrderAndLockSuccessPage = () => {
 
   const handleViewAsset = () => {
     console.log('View Locked Asset clicked');
+    navigate('/locked-assets')
+
   };
 
   const handleGoToDashboard = () => {
     console.log('Go to Dashboard clicked');
+    navigate('/portfolio')
   };
 
   return (

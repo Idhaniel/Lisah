@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const OrderAndLock = () => {
+    const navigate = useNavigate();
   const [orderType, setOrderType] = useState('market');
   const [quantity, setQuantity] = useState('10');
   const [limitPrice, setLimitPrice] = useState('');
@@ -47,7 +49,7 @@ const OrderAndLock = () => {
 
   const handleBack = () => {
     // Handle back navigation
-    console.log('Back button clicked');
+    navigate('select-asset')
   };
 
   const handleSubmit = (e) => {
@@ -62,6 +64,7 @@ const OrderAndLock = () => {
       autoLiquidation,
       estimatedCost
     });
+    navigate('/review-order')
   };
 
   return (

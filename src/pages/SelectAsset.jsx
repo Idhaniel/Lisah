@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SelectAsset = () => {
+    const navigate = useNavigate();
   const [selectedAsset, setSelectedAsset] = useState('TSLA');
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -55,6 +57,7 @@ const SelectAsset = () => {
   const handleBack = () => {
     // Handle back navigation
     console.log('Back button clicked');
+    navigate('/portfolio')
   };
 
   const handleNext = () => {
@@ -62,8 +65,7 @@ const SelectAsset = () => {
       alert('Please select an asset to lock');
       return;
     }
-    console.log('Selected asset:', selectedAsset);
-    // Navigate to next step
+    navigate('/order-and-lock')
   };
 
   const handleSearch = (e) => {

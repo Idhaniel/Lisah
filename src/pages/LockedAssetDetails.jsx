@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LockedAssetDetails = () => {
+    const navigate = useNavigate();
   const assetDetails = {
     name: 'Apple Inc. (AAPL)',
     currentValue: '$80,000',
@@ -14,6 +16,7 @@ const LockedAssetDetails = () => {
 
   const handleBack = () => {
     console.log('Back button clicked');
+    navigate('/portfolio')
   };
 
   const handleMenu = () => {
@@ -22,6 +25,7 @@ const LockedAssetDetails = () => {
 
   const handleAddFunds = () => {
     console.log('Add Funds clicked');
+    navigate('/top-up')
   };
 
   const handleShare = () => {
