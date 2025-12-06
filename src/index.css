@@ -44,3 +44,139 @@ html, body, #root {
 .text-background-dark {
   color: rgb(var(--color-background-dark));
 }
+
+/*************For ORDERANDLOCK.JSX *******************/
+/* Add to your existing index.css */
+
+/* Additional colors for this component */
+:root {
+  --color-text-light: 35 33 15;     /* #23210f */
+  --color-text-dark: 248 248 245;   /* #f8f8f5 */
+  --color-field-light: 255 255 255; /* #ffffff */
+  --color-field-dark: 39 38 27;     /* #27261b */
+  --color-border-light: 229 231 235; /* #e5e7eb */
+  --color-border-dark: 85 82 58;    /* #55523a */
+  --color-green-600: 22 163 74;     /* #16a34a */
+}
+
+/* Utility classes for the new colors */
+.text-text-light {
+  color: rgb(var(--color-text-light));
+}
+
+.text-text-dark {
+  color: rgb(var(--color-text-dark));
+}
+
+.bg-field-light {
+  background-color: rgb(var(--color-field-light));
+}
+
+.bg-field-dark {
+  background-color: rgb(var(--color-field-dark));
+}
+
+.border-border-light {
+  border-color: rgb(var(--color-border-light));
+}
+
+.border-border-dark {
+  border-color: rgb(var(--color-border-dark));
+}
+
+.text-green-600 {
+  color: rgb(var(--color-green-600));
+}
+
+/* Custom datetime-local input styling */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.5);
+}
+
+.dark input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+/* Better scrollbar for the modal */
+.max-h-\[95vh\] {
+  max-height: 95vh;
+}
+
+/* Smooth transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Improve toggle switch */
+.toggle-checkbox:checked + .toggle-label {
+  background-color: rgb(var(--color-primary));
+}
+
+.toggle-checkbox:checked + .toggle-label:after {
+  transform: translateX(1.25rem);
+}
+
+/* Sticky header for better mobile UX */
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+/**************** Order and Lock Page *****************************/
+/**************** Review Order Page *****************************/
+/* Add custom checkbox styling */
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Ensure proper border colors for the review page */
+.bg-blue-50 {
+  background-color: #eff6ff;
+}
+
+.border-blue-200 {
+  border-color: #bfdbfe;
+}
+
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.text-blue-700 {
+  color: #1d4ed8;
+}
+
+.text-blue-800 {
+  color: #1e40af;
+}
+
+/* Fix for sticky footer on mobile */
+.sticky {
+  position: sticky;
+}
+
+/* Improve list styling */
+.list-inside {
+  list-style-position: inside;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+/**************** Review and Lock Page *****************************/
