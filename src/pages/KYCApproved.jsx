@@ -4,11 +4,11 @@ const KYCApproved = () => {
   const navigate = useNavigate();
 
   const handleStartInvesting = () => {
-    navigate('/invest');
+    navigate('/portfolio');
   };
 
   const handleGoToDashboard = () => {
-    navigate('/dashboard');
+    navigate('/portfolio');
   };
 
   return (
