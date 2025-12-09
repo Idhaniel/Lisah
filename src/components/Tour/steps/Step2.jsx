@@ -1,56 +1,112 @@
-// src/components/Tour/steps/Step2.jsx
 const Step2 = ({ onNext, onSkip }) => {
   return (
-    <div className="fixed inset-0 bg-background-dark font-display text-white overflow-hidden">
-      <div className="flex flex-col h-full w-full">
-        <header className="flex items-center justify-between p-4 pb-2">
-          <button 
-            onClick={onSkip}
-            className="font-bold text-white/70"
-          >
-            Skip
-          </button>
-          <div></div>
-        </header>
-        
-        <main className="flex flex-1 flex-col items-center justify-center px-4 text-center">
-          <div className="flex w-full max-w-xs grow items-center justify-center py-8">
-            <div className="w-full aspect-square rounded-full bg-background-light/5 flex items-center justify-center">
-              <span 
-                className="material-symbols-outlined text-primary" 
-                style={{ fontSize: '120px' }}
-              >
-                monitoring
+    <div className="fixed inset-0 bg-gradient-to-b from-background-light to-gray-50 font-display flex flex-col">
+      {/* Skip Button - Top Right */}
+      <div className="flex justify-end p-4 md:p-6 shrink-0">
+        <button 
+          onClick={onSkip}
+          className="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-gray-100 text-text-light/80 text-sm font-medium leading-normal tracking-[0.015em] hover:bg-gray-200 hover:text-text-light transition-all active:scale-95"
+        >
+          <span className="truncate">Skip Tour</span>
+        </button>
+      </div>
+
+      {/* Main Content - Fills remaining space without overflow */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-6 py-4 overflow-hidden">
+        <div className="w-full h-full max-w-4xl flex flex-col items-center justify-between">
+          
+          {/* Icon Section - Dynamic height */}
+          <div className="flex-1 flex items-center justify-center w-full max-w-xl lg:max-w-2xl">
+            <div className="relative w-full h-full max-h-[40vh] flex items-center justify-center">
+              <div className="absolute inset-0 -z-10">
+                <div className="w-full h-full max-w-md max-h-md rounded-full bg-primary/5 blur-xl mx-auto"></div>
+              </div>
+              
+              <div className="w-full h-full max-w-sm max-h-sm flex items-center justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-xl"></div>
+                  <span className="material-symbols-outlined text-primary relative text-7xl md:text-8xl lg:text-9xl">
+                    monitoring
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Text Content - Fixed height section */}
+          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl flex flex-col items-center px-2 py-4 md:py-6">
+            <div className="inline-flex items-center gap-2 mb-3 md:mb-4 px-4 py-2 rounded-full bg-primary/10">
+              <span className="material-symbols-outlined text-primary text-sm">
+                trending_up
               </span>
+              <p className="text-primary text-sm font-medium">Visual Tracking</p>
+            </div>
+            
+            <h1 className="text-text-light text-2xl md:text-3xl lg:text-3xl font-bold leading-tight text-center mb-3 md:mb-4">
+              Track Your Growth Visually
+            </h1>
+            
+            <p className="text-text-light/70 text-base md:text-lg lg:text-base font-normal leading-normal text-center mb-4 md:mb-5 max-w-sm">
+              Monitor your locked asset's performance with intuitive graphs and metrics that show your journey in real-time.
+            </p>
+            
+            {/* Features highlight - Horizontal layout that fits */}
+            <div className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8 mt-2 text-center">
+              <div className="min-w-[70px]">
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-lg md:text-xl">
+                    show_chart
+                  </span>
+                </div>
+                <p className="text-text-light/60 text-xs">Live Charts</p>
+              </div>
+              <div className="w-px h-8 bg-border-light"></div>
+              <div className="min-w-[70px]">
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-lg md:text-xl">
+                    analytics
+                  </span>
+                </div>
+                <p className="text-text-light/60 text-xs">Real-time Data</p>
+              </div>
+              <div className="w-px h-8 bg-border-light"></div>
+              <div className="min-w-[70px]">
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-lg md:text-xl">
+                    insights
+                  </span>
+                </div>
+                <p className="text-text-light/60 text-xs">Smart Insights</p>
+              </div>
             </div>
           </div>
-          
-          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white">
-            Track Your Growth Visually
-          </h1>
-          
-          <p className="mt-2 max-w-sm text-base font-normal text-white/80">
-            Monitor your locked asset's performance with intuitive graphs and metrics.
-          </p>
-        </main>
-        
-        <footer className="flex items-center justify-between p-6">
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium text-white/70">2 of 3</span>
-            <div className="flex gap-1.5">
-              <div className="h-2 w-2 rounded-full bg-primary"></div>
-              <div className="h-2 w-2 rounded-full bg-primary"></div>
-              <div className="h-2 w-2 rounded-full bg-white/30"></div>
+
+          {/* Navigation - Fixed at bottom */}
+          <div className="w-full max-w-sm md:max-w-md lg:max-w-lg flex flex-col items-center gap-4 md:gap-5 pt-4 md:pt-6 border-t border-gray-200 shrink-0">
+            {/* Progress dots */}
+            <div className="flex items-center gap-3">
+              <div className="h-2 w-2 rounded-full bg-gray-300"></div>
+              <div className="h-3 w-8 rounded-full bg-primary"></div>
+              <div className="h-2 w-2 rounded-full bg-gray-300"></div>
             </div>
+            
+            {/* Next Button */}
+            <button 
+              onClick={onNext}
+              className="group flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 md:h-14 px-6 bg-primary text-white text-base md:text-lg font-bold leading-normal tracking-wide hover:shadow-lg hover:shadow-primary/30 transition-all shadow-md active:scale-[0.98]"
+            >
+              <span className="truncate">Next: Security Features</span>
+              <span className="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </button>
+            
+            {/* Help text */}
+            <p className="text-text-light/50 text-xs md:text-sm text-center">
+              Step 2 of 3 • See your progress clearly
+            </p>
           </div>
-          
-          <button 
-            onClick={onNext}
-            className="rounded-lg bg-primary px-8 py-3 font-bold text-background-dark"
-          >
-            Next
-          </button>
-        </footer>
+        </div>
       </div>
     </div>
   );

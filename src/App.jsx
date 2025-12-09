@@ -20,6 +20,7 @@ import WithdrawalManagementPage from "./pages/withdrawal/release_management";
 import WithdrawalSuccess from "./pages/withdrawal/withdrawl_success";
 import WithdrawalProcessing from "./pages/withdrawal/fund_processing";
 import ChooseBank from "./pages/withdrawal/choose_bank";
+import PortfolioMenu from "./pages/PortfolioMenu";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       <Route path="/kyc-pending" element={<KYCPendingReview />} />
       <Route path="/kyc-approved" element={<KYCApproved />} />
       <Route path="/kyc-rejected" element={<KYCRejected />} />
-      <Route path="/portfolio" element={<PortfolioOverview />} />
+      {/* <Route path="/portfolio" element={<PortfolioOverview />} /> */}
+      <Route path="/portfolio" element={<PortfolioMenu />} />
       <Route path="/deposit-funds" element={<DepositFunds />} />
       <Route path="/select-asset" element={<SelectAsset />} />
       <Route path="/order-and-lock" element={<OrderAndLock />} />
